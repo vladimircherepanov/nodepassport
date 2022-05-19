@@ -11,6 +11,11 @@ const UserSchema = new Schema({
     password: {
         type: String,
         required: true
+    },
+    confirmed: {
+        type: Boolean,
+        required: false,
+        default: false
     }
 });
 

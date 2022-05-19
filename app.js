@@ -22,7 +22,7 @@ app.use('/', routes);
 app.use('/user', passport.authenticate('jwt', { session: false }), secureRoute);
 // Handle errors.
 app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
+    res.status(err.status || 500); //Dhe
     res.json({ error: err });
 });
 app.listen(3000, () => {

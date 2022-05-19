@@ -2,7 +2,7 @@ const passport = require('passport');
 const localStrategy = require('passport-local').Strategy;
 const JWTstrategy = require('passport-jwt').Strategy;
 const ExtractJWT = require('passport-jwt').ExtractJwt;
-
+const MagicLinkStrategy = require('passport-magic-link').Strategy;
 
 const UserModel = require('../model/model');
 
@@ -65,3 +65,4 @@ passport.use(
         }
     )
 );
+
