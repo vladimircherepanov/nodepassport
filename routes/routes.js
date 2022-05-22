@@ -3,6 +3,10 @@ const passport = require('passport');
 const jwt = require("jsonwebtoken");
 const router = express.Router();
 
+const cookies = require('../routes/cookies');
+const secureRoute = require('../routes/secure-routes');
+
+
 router.post(
     '/signup',
     passport.authenticate('signup', { session: false }),
@@ -42,4 +46,9 @@ router.post(
         (req, res, next);
     }
 );
+
+//JWT implementation
+router.post('/user', passport.authenticate('jwt', { session: false }), secureRoute);
+router.get('/cookies', passport.authenticate('jwt', {session: false}), cookies);
+
 module.exports = router;
